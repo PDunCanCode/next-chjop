@@ -12,7 +12,7 @@ const StyledHeader = styled.h1`
 
 const Index = () => {
   return (
-    <MainLayout>
+    <MainLayout title='Chjop'>
       <StyledHeader>Index Page</StyledHeader>
     </MainLayout>
   );
