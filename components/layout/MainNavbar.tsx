@@ -1,6 +1,7 @@
 import { Layout, Menu } from 'antd';
 import Link from 'next/link';
 import styled from 'styled-components';
+import { useFetchUser } from '../../utils/user';
 
 const { Header } = Layout;
 
@@ -60,23 +61,55 @@ const Title = styled.div`
         `}
 `;
 
-export const MainNavbar = () => (
-  <StyledHeader>
-    <TitleContainer>
-      <Title>
-        <img src='/logo.svg' alt='Next Chop Logo' />
-        <div>
-          <h2>Chjop Chjop</h2>
-          <p>Chjopping Up the Good Stuff (powered by Next.js)</p>
-        </div>
-      </Title>
-    </TitleContainer>
-    <StyledMenu theme='light' mode='horizontal' style={{ lineHeight: '64px' }}>
-      <Menu.Item key='/'>
-        <Link href='/'>
-          <a>Home</a>
-        </Link>
-      </Menu.Item>
-    </StyledMenu>
-  </StyledHeader>
-);
+export const MainNavbar = () => {
+  const { user, loading } = useFetchUser();
+  return (
+    <StyledHeader>
+      <TitleContainer>
+        <Title>
+          <img src='/logo.svg' alt='Next Chop Logo' />
+          <div>
+            <h2>Chjop Chjop</h2>
+            <p>Chjopping Up the Good Stuff (powered by Next.js)</p>
+          </div>
+        </Title>
+      </TitleContainer>
+      <StyledMenu
+        theme='light'
+        mode='horizontal'
+        style={{ lineHeight: '64px' }}
+      >
+        <Menu.Item key='/'>
+          <Link href='/'>
+            <a>Home</a>
+          </Link>
+        </Menu.Item>
+        {user && !loading
+          ? [
+              <Menu.Item key='/favorites'>
+                <Link href='/favorites'>
+                  <a>Favorites</a>
+                </Link>
+              </Menu.Item>,
+              <Menu.Item key='/my-recipes'>
+                <Link href='/my-recipes'>
+                  <a>My Recipes</a>
+                </Link>
+              </Menu.Item>,
+              <Menu.Item key='/api/logout'>
+                <Link href='/api/logout'>
+                  <a>Logout</a>
+                </Link>
+              </Menu.Item>,
+            ]
+          : [
+              <Menu.Item key='/api/login'>
+                <Link href='/api/login'>
+                  <a>Login</a>
+                </Link>
+              </Menu.Item>,
+            ]}
+      </StyledMenu>
+    </StyledHeader>
+  );
+};
