@@ -4,6 +4,7 @@ import { Col } from 'antd';
 import Link from 'next/link';
 import GraphImg from 'graphcms-image';
 import EllipsisText from 'react-ellipsis-text';
+import { LikeButton } from './LikeButton';
 
 const StyledRecipe = styled(Col)`
   ${({ theme }) => `
