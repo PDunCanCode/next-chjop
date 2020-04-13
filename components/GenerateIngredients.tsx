@@ -23,7 +23,7 @@ export const GenerateIngredients = ({
   handleDropdownChange,
 }: IngredientsProps) => {
   const columns = _.concat(
-    names.map((name) => ({
+    names.map(name => ({
       title: `${name}`,
       key: `${name}`,
       render: (ingredient, _record, index: number) => {
@@ -36,7 +36,7 @@ export const GenerateIngredients = ({
                 handleDropdownChange={handleDropdownChange}
               />
             }
-            placement='bottomLeft'
+            placement="bottomLeft"
           >
             <Button>{ingredient[name]}</Button>
           </Dropdown>
@@ -57,16 +57,16 @@ export const GenerateIngredients = ({
         render: (_ingredient, _record, index: number) => (
           <Button
             onClick={handleDeleteIngredient}
-            type='danger'
-            shape='circle'
-            size='small'
+            type="danger"
+            shape="circle"
+            size="small"
             name={`${index}`}
           >
             -
           </Button>
         ),
       },
-    ]
+    ],
   );
 
   return (
@@ -76,9 +76,9 @@ export const GenerateIngredients = ({
           <p>
             <Button
               onClick={handleAddIngredient}
-              type='primary'
-              shape='circle'
-              size='small'
+              type="primary"
+              shape="circle"
+              size="small"
             >
               +
             </Button>

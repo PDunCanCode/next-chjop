@@ -16,19 +16,19 @@ export const PictureUploader = ({
 }) => {
   const uploadProps = {
     name: 'file',
-    action: (file) =>
+    action: file =>
       `${process.env.APIURL}?key=${process.env.APIKEY}&path=/${process.env.PROJECTID}-${process.env.BRANCH}/${file.name}`,
-    data: (file) => ({ fileUpload: file }),
-    onChange: async (info) => {
+    data: file => ({ fileUpload: file }),
+    onChange: async info => {
       if (info.file.status === 'uploading') {
-        setRecipeState((state) => ({ ...state, isPicUploading: true }));
+        setRecipeState(state => ({ ...state, isPicUploading: true }));
       }
 
       if (info.file.status === 'done') {
         const { size, type, filename } = info.file.response;
         // console.log(size, type, filename);
         var img = new Image();
-        img.onload = function () {
+        img.onload = function() {
           const height = _.get(this, 'naturalHeight');
           const width = _.get(this, 'naturalWidth');
           handleSubmitImages({
@@ -38,20 +38,20 @@ export const PictureUploader = ({
               fileName: filename,
               handle: _.get(info, 'file.response.url').replace(
                 process.env.CDNBASE,
-                ''
+                '',
               ),
               status: 'PUBLISHED',
               height,
               width,
             },
           });
-          setRecipeState((state) => ({ ...state, isPicUploading: false }));
+          setRecipeState(state => ({ ...state, isPicUploading: false }));
         };
         img.src = info.file.response.url;
       } else if (info.file.status === 'error') {
         console.log(info);
         console.log(info.file.name);
-        setRecipeState((state) => ({ ...state, isPicUploading: false }));
+        setRecipeState(state => ({ ...state, isPicUploading: false }));
       }
     },
   };
@@ -59,7 +59,7 @@ export const PictureUploader = ({
   return (
     <Upload {...uploadProps}>
       <Button>
-        <Icon type='upload' /> Click to Upload
+        <Icon type="upload" /> Click to Upload
       </Button>
     </Upload>
   );

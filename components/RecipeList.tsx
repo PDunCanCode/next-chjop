@@ -30,8 +30,8 @@ export const RecipesList = ({
   const { loading, data, error } = useQuery(query, options);
 
   const parentArray = _.get(data, queryType);
-  const recipesList = _.map(parentArray, (value) =>
-    _.get(value, 'recipe', value)
+  const recipesList = _.map(parentArray, value =>
+    _.get(value, 'recipe', value),
   );
 
   if (loading) return <Loading />;
@@ -39,8 +39,8 @@ export const RecipesList = ({
   if (recipesList.length === 0)
     return (
       <Warning
-        warningHeader='No Recipes'
-        warningText='No recipes are present. Why not add one?'
+        warningHeader="No Recipes"
+        warningText="No recipes are present. Why not add one?"
       />
     );
 

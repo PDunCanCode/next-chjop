@@ -6,7 +6,7 @@ export const MainFooter = () => (
   <Footer>
     <Row>
       <Col sm={{ span: 22, offset: 1 }}>
-        <h3>Find your next chjomp.</h3>
+        <h3>Find your next bite</h3>
       </Col>
     </Row>
   </Footer>

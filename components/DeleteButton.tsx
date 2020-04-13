@@ -15,10 +15,10 @@ export const DeleteButton = ({
   disabled: boolean;
 }) => {
   const [deleteRecipeMutation, { loading: deleteRecipeLoading }] = useMutation(
-    deleteRecipeGraphQL
+    deleteRecipeGraphQL,
   );
   const [deleteAssetMutation, { loading: deleteAssetLoading }] = useMutation(
-    deleteAssetGraphQL
+    deleteAssetGraphQL,
   );
   const [isModalVisible, setModalVisibility] = useState(false);
 
@@ -49,14 +49,14 @@ export const DeleteButton = ({
     <Fragment>
       <Button
         block
-        type='danger'
+        type="danger"
         disabled={disabled || deleteRecipeLoading || deleteAssetLoading}
         onClick={handleShow}
       >
         Delete Recipe
       </Button>
       <Modal
-        title='Confirm Delete'
+        title="Confirm Delete"
         visible={isModalVisible}
         onOk={handleOk}
         onCancel={handleHide}

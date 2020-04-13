@@ -1,0 +1,8 @@
+mutation{
+    createRecipe(data: YOURRECIPEOBJECTHERE) {
+        title
+        description
+        content
+        ingredients
+    }
+}

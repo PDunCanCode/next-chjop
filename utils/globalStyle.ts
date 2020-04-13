@@ -1,11 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
-const heading = (size) => {
+export const heading = size => {
   return `
         text-align: center;
         font-weight: bold;
         line-height: 1em;
-        font-size: ${size}
+        font-size: ${size};
     `;
 };
 

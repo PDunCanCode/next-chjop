@@ -1,8 +1,8 @@
 import { Recipe } from '../generated/apollo-components';
 import styled from 'styled-components';
+import GraphImg from 'graphcms-image';
 import { Col } from 'antd';
 import Link from 'next/link';
-import GraphImg from 'graphcms-image';
 import EllipsisText from 'react-ellipsis-text';
 import { LikeButton } from './LikeButton';
 
@@ -34,6 +34,7 @@ const StyledRecipe = styled(Col)`
                 }
             }
         }
+
         p{
             padding: 0px ${theme['padding-small']};
         }
@@ -41,6 +42,8 @@ const StyledRecipe = styled(Col)`
             padding: 0px ${theme['padding-small']};
             line-height: 1.5em;
         }
+
+
     `}
 `;
 
@@ -59,7 +62,7 @@ export const RecipeListItem = ({
       lg={{ span: 8 }}
       xl={{ span: 6 }}
     >
-      <div className='card'>
+      <div className="card">
         <Link href={`/${parentRoute}/${id}`}>
           <div>{images ? <GraphImg image={images} /> : null}</div>
         </Link>

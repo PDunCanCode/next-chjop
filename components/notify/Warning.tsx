@@ -18,7 +18,7 @@ export const Warning = ({
       <Alert
         message={warningHeader || `Warning`}
         description={warningText || `An unknown warning has occured.`}
-        type='warning'
+        type="warning"
       />
     </StyledCol>
   </Row>

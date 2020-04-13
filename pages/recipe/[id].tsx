@@ -14,22 +14,22 @@ const Recipe = ({ id }) => {
 
   if (loading)
     return (
-      <MainLayout title='Recipe Loading'>
+      <MainLayout title="Recipe Loading">
         <Loading />
       </MainLayout>
     );
 
   if (error)
     return (
-      <MainLayout title='Recipe Loading Error'>
+      <MainLayout title="Recipe Loading Error">
         <Error errorText={`${error}`} />
       </MainLayout>
     );
 
   if (!title)
     return (
-      <MainLayout title='Not a valid recipe'>
-        <Error errorText='Not a valid recipe' />
+      <MainLayout title="Not a valid recipe">
+        <Error errorText="Not a valid recipe" />
       </MainLayout>
     );
 

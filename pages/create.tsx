@@ -19,7 +19,7 @@ const Create = () => {
     Router.replace('/');
   }
   return (
-    <MainLayout title='Create Recipe'>
+    <MainLayout title="Create Recipe">
       <StyledHeader>Create Recipe</StyledHeader>
       <CreateRecipe />
     </MainLayout>

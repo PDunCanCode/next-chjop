@@ -2,7 +2,7 @@ import { MainLayout } from '../../components/layout/MainLayout';
 import { UpdateRecipe } from '../../components/UpdateRecipe';
 
 const MyRecipe = ({ id }) => (
-  <MainLayout title='Update Recipe'>
+  <MainLayout title="Update Recipe">
     <h1>Update Recipe</h1>
     <UpdateRecipe id={id} />
   </MainLayout>

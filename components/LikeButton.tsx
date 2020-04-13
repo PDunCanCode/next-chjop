@@ -45,7 +45,7 @@ export const LikeButton = ({
     return (
       <StyledSpan>
         {` ${userLikes.length}`}
-        <Icon type='heart' theme='twoTone' twoToneColor='#eb2f96' />
+        <Icon type="heart" theme="twoTone" twoToneColor="#eb2f96" />
       </StyledSpan>
     );
   }
@@ -96,10 +96,10 @@ export const LikeButton = ({
             });
           }
         }}
-        type='heart'
+        type="heart"
         theme={hasUserLiked ? 'filled' : 'twoTone'}
         style={{ color: '#eb2f96' }}
-        twoToneColor='#eb2f96'
+        twoToneColor="#eb2f96"
       />
     </StyledSpan>
   );

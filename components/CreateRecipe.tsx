@@ -54,7 +54,7 @@ export const CreateRecipe = () => {
       status: 'DRAFT',
       ingredients: [],
     },
-    initiateCreateRecipe
+    initiateCreateRecipe,
   );
 
   if (isFetchingUser) return <Loading />;
@@ -62,17 +62,17 @@ export const CreateRecipe = () => {
   return (
     <Form onSubmit={handleSubmit}>
       <GenerateInput
-        name='title'
+        name="title"
         value={inputs.title}
         handleInputChange={handleInputChange}
       />
       <GenerateInput
-        name='description'
+        name="description"
         value={inputs.description}
         handleInputChange={handleInputChange}
       />
       <GenerateTextInput
-        name='content'
+        name="content"
         value={inputs.content}
         handleInputChange={handleInputChange}
       />
@@ -86,12 +86,12 @@ export const CreateRecipe = () => {
       />
       <Row>
         <GenerateDropdown
-          name='status'
+          name="status"
           value={inputs.status}
           handleDropdownChange={handleDropdownChange}
         />
         <Col span={4}>
-          <Form.Item label='Upload Image'>
+          <Form.Item label="Upload Image">
             <PictureUploader
               handleSubmitImages={handleSubmitImages}
               setRecipeState={setRecipeState}
@@ -99,11 +99,11 @@ export const CreateRecipe = () => {
           </Form.Item>
         </Col>
         <Col span={4}>
-          <Form.Item label='Create Recipe'>
+          <Form.Item label="Create Recipe">
             <Button
               disabled={loading || recipeState.isPicUploading}
-              type='primary'
-              htmlType='submit'
+              type="primary"
+              htmlType="submit"
             >
               Create Recipe
             </Button>

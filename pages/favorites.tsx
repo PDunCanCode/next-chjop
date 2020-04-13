@@ -25,10 +25,10 @@ const Favorites = () => {
   }
 
   return (
-    <MainLayout title='Recipes'>
+    <MainLayout title="Recipes">
       <StyledHeader>My Favorites</StyledHeader>
       <RecipesList
-        parentRoute='recipe'
+        parentRoute="recipe"
         queryType={queryEnum.userLikes}
         options={options}
       />

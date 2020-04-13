@@ -33,18 +33,18 @@ const Index = () => {
   }
 
   return (
-    <MainLayout title='My Recipes'>
+    <MainLayout title="My Recipes">
       <StyledRow>
         <Col span={24}>
-          <Link href='/create'>
-            <Button type='primary'>Create</Button>
+          <Link href="/create">
+            <Button type="primary">Create</Button>
           </Link>
           <h1>My Recipes</h1>
         </Col>
       </StyledRow>
       <div>
         <RecipesList
-          parentRoute='my-recipes'
+          parentRoute="my-recipes"
           queryType={queryEnum.recipes}
           options={options}
         />

@@ -26,6 +26,7 @@ export const GenerateInput = ({
     </Col>
   </Row>
 );
+
 export const GenerateTextInput = ({
   name,
   value,
@@ -44,6 +45,7 @@ export const GenerateTextInput = ({
     </Col>
   </Row>
 );
+
 const status = ['DRAFT', 'PUBLISHED', 'ARCHIVED'];
 
 export const GenerateDropdown = ({
@@ -61,7 +63,7 @@ export const GenerateDropdown = ({
             handleDropdownChange={handleDropdownChange}
           />
         }
-        placement='bottomLeft'
+        placement="bottomLeft"
       >
         <Button>{value}</Button>
       </Dropdown>

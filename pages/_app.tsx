@@ -1,4 +1,4 @@
-import '~antd/dist/antd.css';
+import 'antd/dist/antd.css';
 import App from 'next/app';
 import { withApollo } from '../components/WithApolloClient';
 

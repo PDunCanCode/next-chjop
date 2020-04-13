@@ -10,9 +10,9 @@ export const Error = ({ errorText }: { errorText: string }) => (
   <Row>
     <StyledCol span={12} offset={6}>
       <Alert
-        message='An error has occured'
+        message="An error has occured"
         description={errorText || 'Error'}
-        type='error'
+        type="error"
       />
     </StyledCol>
   </Row>

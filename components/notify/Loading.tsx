@@ -11,6 +11,6 @@ const StyledSpinner = styled.div`
 
 export const Loading = () => (
   <StyledSpinner>
-    <Spin size='large' />
+    <Spin size="large" />
   </StyledSpinner>
 );

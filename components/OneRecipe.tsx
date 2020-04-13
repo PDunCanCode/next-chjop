@@ -14,6 +14,7 @@ const StyledOneRecipe = styled(Col)`
         border-radius: 8px;
         box-shadow: 0 0 16px ${theme['border-color']};
         border: ${theme['border-width']} solid ${theme['border-color']};
+
         .graph-image-outer-wrapper {
             border: 0px;
             .graphcms-image-wrapper {
@@ -31,6 +32,7 @@ const StyledOneRecipe = styled(Col)`
                 }
             }
         }
+
         h1,
         h2 {
             padding-top: ${theme['margin-small']};
