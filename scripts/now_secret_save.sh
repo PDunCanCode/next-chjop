@@ -26,5 +26,5 @@ do
     l_now_formatted_env_name=$(echo "$l_now_env_name" | tr '[:upper:]' '[:lower:]')
     
     echo $l_now_formatted_env_name ${!i}
-    now secret add $l_now_formatted_env_name ${!i}
+    now secret add -- $l_now_formatted_env_name ${!i}
 done

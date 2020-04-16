@@ -1,3 +1,4 @@
+  
 #!/bin/bash
 
 NAMESPACE=$1
